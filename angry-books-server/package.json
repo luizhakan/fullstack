@@ -1,0 +1,14 @@
+{
+  "name": "angry-books-server",
+  "version": "1.0.0",
+  "description": "backend do angry-books",
+  "main": "index.js",
+  "scripts": {
+    "start": "node --watch app.js"
+  },
+  "author": "Luiz Hakan",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
