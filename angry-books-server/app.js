@@ -1,8 +1,9 @@
 const express = require("express");
 const app = express();
 const port = 3000;
-const routerLivro = require("./routes/router");
+const routerLivro = require("./routes/routes");
 
+app.use(express.json());
 app.use("/livros", routerLivro);
 app.use("/", routerLivro);
 
