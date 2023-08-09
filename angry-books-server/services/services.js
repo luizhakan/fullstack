@@ -36,23 +36,31 @@ const modificaLivro = (modificacoes, id) => {
   fs.writeFileSync("livros.json", JSON.stringify(livrosAtuais));
 };
 
-const deletaLivro = (livro, id) => {
-  const livrosAtuais = getTodosLivros();
+function deletaLivroPorId(id) {
+  try {
+    const livrosAtuais = JSON.parse(fs.readFileSync("livros.json"));
 
-  const indiceDeletado = livrosAtuais.findIndex(
-    (livro) => livro.id.toString() === id
-  );
-  livrosAtuais.splice(indiceDeletado, 1);
+    const idDeletado = livrosAtuais.findIndex(
+      (livro) => livro.id.toString() === id
+    );
 
-  fs.writeFileSync("livros.json", JSON.stringify(livrosAtuais));
+    if (idDeletado !== -1) {
+      livrosAtuais.splice(idDeletado, 1);
+      fs.writeFileSync("livros.json", JSON.stringify(livrosAtuais));
+      return idDeletado;
+    } else {
+      return -1;
+    }
+  } catch (error) {
+    throw error;
+  }
+}
 
-  return livrosAtuais;
-};
 
 module.exports = {
   getTodosLivros,
   getLivrosId,
   insereLivro,
   modificaLivro,
-  deletaLivro,
+  deletaLivroPorId,
 };

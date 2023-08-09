@@ -1,1 +1,6 @@
-[{"id":2,"name":"O Senhor dos Aneis"},{"id":3,"name":"Percy Jackson"},{"id":4,"name":"O Pequeno Principe"}]
+[
+  { "id": 2, "name": "O Senhor dos Aneis" },
+  { "id": 4, "name": "O Pequeno Principe" },
+  { "id": 1, "name": "Harry Potter" },
+  { "id": 3, "name": "Sherlock Holmes" }
+]
